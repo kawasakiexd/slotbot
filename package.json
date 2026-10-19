@@ -1,0 +1,37 @@
+{
+  "name": "slotbot",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@12.11.2",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "dev": "pnpm --filter @slotbot/bot dev",
+    "start": "pnpm --filter @slotbot/bot start",
+    "build": "pnpm -r --if-present build",
+    "typecheck": "pnpm -r --if-present typecheck",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "db:up": "docker compose -f docker-compose.dev.yml up -d",
+    "db:down": "docker compose -f docker-compose.dev.yml down",
+    "db:generate": "pnpm --filter @slotbot/bot db:generate",
+    "db:generate:custom": "pnpm --filter @slotbot/bot db:generate:custom",
+    "db:migrate": "pnpm --filter @slotbot/bot db:migrate",
+    "db:seed": "pnpm --filter @slotbot/bot db:seed",
+    "db:studio": "pnpm --filter @slotbot/bot db:studio",
+    "db:check": "pnpm --filter @slotbot/bot db:check"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.0",
+    "@types/node": "^24.19.0",
+    "eslint": "^10.12.0",
+    "eslint-config-prettier": "^10.1.0",
+    "globals": "^17.13.0",
+    "prettier": "^3.9.0",
+    "typescript": "^6.0.0",
+    "typescript-eslint": "^8.71.0"
+  }
+}

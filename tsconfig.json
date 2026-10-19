@@ -1,0 +1,5 @@
+{
+  "extends": "./tsconfig.base.json",
+  "include": ["apps/bot/src/**/*.ts", "apps/bot/*.ts", "packages/shared/src/**/*.ts"],
+  "exclude": ["**/dist/**", "**/node_modules/**"]
+}

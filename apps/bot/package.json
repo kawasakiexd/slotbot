@@ -1,0 +1,44 @@
+{
+  "name": "@slotbot/bot",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch --env-file-if-exists=../../.env src/index.ts",
+    "build": "tsdown",
+    "start": "node --enable-source-maps dist/index.js",
+    "typecheck": "tsc --noEmit",
+    "db:generate": "drizzle-kit generate",
+    "db:generate:custom": "drizzle-kit generate --custom",
+    "db:migrate": "tsx --env-file-if-exists=../../.env src/cli.ts migrate",
+    "db:seed": "tsx --env-file-if-exists=../../.env src/cli.ts seed",
+    "db:studio": "drizzle-kit studio",
+    "db:check": "drizzle-kit check"
+  },
+  "dependencies": {
+    "@grammyjs/auto-retry": "^2.0.0",
+    "@grammyjs/conversations": "^2.1.0",
+    "@grammyjs/i18n": "^1.1.0",
+    "@grammyjs/ratelimiter": "^1.2.0",
+    "@grammyjs/runner": "^2.0.0",
+    "@hono/node-server": "^2.1.0",
+    "@slotbot/shared": "workspace:*",
+    "croner": "^10.0.0",
+    "drizzle-orm": "^0.45.0",
+    "exceljs": "^4.4.0",
+    "grammy": "^1.46.0",
+    "hono": "^4.13.0",
+    "luxon": "^3.7.0",
+    "openai": "^7.34.0",
+    "pino": "^10.4.0",
+    "postgres": "^3.4.0",
+    "zod": "^4.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.19.0",
+    "@types/luxon": "^3.7.0",
+    "drizzle-kit": "^0.31.0",
+    "pino-pretty": "^13.2.0",
+    "tsdown": "^0.23.0",
+    "tsx": "^4.23.0"
+  }
+}
